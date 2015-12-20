@@ -1,0 +1,18 @@
+1, setup.py is the standard name for Python installation script. When run, it installs your package using the Python distribution utilities (distutils).
+2, You can also provide important information to users in README.rst (or README.txt, or whatever filename suits your fancy).
+3, requirements.txt should list your Python package’s dependencies –
+    i.e., all of the packages that a tool such as pip should install to make your package work.
+4, You can also include test-requirements.txt, which lists only the dependencies required to run the test suite.
+5, Finally, the docs directory should contain the package’s documentation in reStructuredText format
+6, Packages often have to provide extra data, such as images, shell scripts, and so forth. Unfortunately, there’s no universally accepted standard for where these files should be stored.
+Just put them wherever makes the most sense for your project.
+The following top-level directories also frequently appear: Most of the time, the following extra top level directories are used: etc is for sample configuration files.
+7, tools is for shell scripts or related tools.
+8, bin is for binary scripts you’ve written that will be installed by setup.py.
+9, data is for other kinds of data, such as media files.
+10, A design issue I often encountered is to create files or modules based on the type of code they will store.
+Having a functions.py or exceptions.py file is a terrible approach.
+11, It doesn’t help anything at all with code organization and forces a reader to jump between files for no good reason.
+Organize your code based on features, not type.
+Also, don’t create a directory and just an __init__.py file in it, e.g. don’t create hooks/__init__.py where hooks.py would have been enough.
+If you create a directory, it should contains several other Python files that belongs to the category/module the directory represents.
